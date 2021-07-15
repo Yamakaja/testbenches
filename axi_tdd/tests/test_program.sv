@@ -84,6 +84,12 @@ module test_program(
     tdd_sync = 1'b0;
 
     #`SIM_WAIT
+    
+    tdd_sync = 1'b1;
+    #10
+    tdd_sync = 1'b0;
+    
+    #`SIM_WAIT
 
     env.stop();
 
