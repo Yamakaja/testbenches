@@ -48,7 +48,8 @@ import data_offload_pkg::*;
 
 module test_program(
   output  reg       init_req = 1'b0,
-  output  reg       sync_ext = 1'b0
+  output  reg       sync_ext = 1'b0,
+  output  reg       src_valid = 1'b0
 );
 
   //declaring environment instance

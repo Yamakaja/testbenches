@@ -40,14 +40,17 @@ module system_tb();
 
     wire init_req;
     wire sync_ext;
+    wire src_valid;
 
     test_program test(
       .init_req (init_req),
-      .sync_ext (sync_ext)
+      .sync_ext (sync_ext),
+      .src_valid (src_valid)
       );
     test_harness `TH (
       .init_req (init_req),
-      .sync_ext (sync_ext)
+      .sync_ext (sync_ext),
+      .src_valid (src_valid)
     );
 
 endmodule

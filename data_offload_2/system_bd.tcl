@@ -38,6 +38,14 @@ if {[info exists ad_project_params(OFFLOAD_TRANSFER_LENGTH)]} {
   set offload_transfer_length $ad_project_params(OFFLOAD_TRANSFER_LENGTH)
   adi_sim_add_define "OFFLOAD_TRANSFER_LENGTH=$offload_transfer_length"
 }
+
+if {[info exists ad_project_params(SRC_OSCILLATING)]} {
+  set src_oscillating $ad_project_params(SRC_OSCILLATING)
+} else {
+  set src_oscillating 0
+  adi_sim_add_define "SRC_OSCILLATING=0"
+}
+
 adi_sim_add_define "OFFLOAD_PATH_TYPE=$path_type"
 adi_sim_add_define "DST_READY_MODE=$dst_ready_mode"
 adi_sim_add_define "DST_READY_HIGH=$dst_ready_high"
@@ -87,6 +95,11 @@ ad_connect init_req DUT/init_req
 
 create_bd_port -dir I -type data sync_ext
 ad_connect sync_ext DUT/sync_ext
+
+create_bd_port -dir I -type data src_valid
+if $src_oscillating {
+  ad_connect src_valid DUT/s_axis_tvalid
+}
 
 ################################################################################
 # mng_axi - AXI4 VIP for configuration

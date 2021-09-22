@@ -48,7 +48,8 @@ import data_offload_pkg::*;
 
 module test_program(
   output  reg       init_req = 1'b0,
-  output  reg       sync_ext = 1'b0
+  output  reg       sync_ext = 1'b0,
+  output  reg       src_valid = 1'b0
 );
 
   //declaring environment instance
@@ -93,6 +94,11 @@ module test_program(
     #1
     env.start();
 
+
+`ifdef SRC_OSCILLATING
+    start_src_osc();
+`endif
+
     #100
     `INFO(("Bring up IP from reset."));
     systemBringUp;
@@ -132,6 +138,23 @@ module test_program(
     $finish();
 
   end
+
+  task start_src_osc;
+    fork
+      toggle_src_valid();
+    join_none
+  endtask
+
+  task toggle_src_valid;
+    while (1) begin
+      @(posedge `TH.`SRC_CLK.inst.IF.clk);
+      src_valid <= 1'b0;
+      @(posedge `TH.`SRC_CLK.inst.IF.clk);
+      @(posedge `TH.`SRC_CLK.inst.IF.clk);
+      @(posedge `TH.`SRC_CLK.inst.IF.clk);
+      src_valid <= 1'b1;
+    end
+  endtask
 
   task start_clocks;
 
