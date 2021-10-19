@@ -1,4 +1,4 @@
-# TX / cyclic
+# TX / oversized / oneshot
 global ad_project_params
 
 set ad_project_params(DATA_PATH_WIDTH) 64             ; ## 64 bytes
@@ -7,7 +7,7 @@ set ad_project_params(PATH_TYPE) 1                    ; ## TX
 set ad_project_params(OFFLOAD_SIZE) 2048              ; ## 2 KiB
 set ad_project_params(OFFLOAD_SRC_DWIDTH) 512         ; ## Source data width
 set ad_project_params(OFFLOAD_DST_DWIDTH) 512         ; ## Destination data width
-set ad_project_params(OFFLOAD_ONESHOT) 0              ; ## Enable cyclic mode
+set ad_project_params(OFFLOAD_ONESHOT) 1              ; ## Oneshot mode
 
 set ad_project_params(PLDDR_OFFLOAD_DATA_WIDTH) 512   ; ## PLDDR's AXI4 interface data width
 set ad_project_params(PLDDR_OFFLOAD_ADDRESS_WIDTH) 28 ; ## PLDDR's AXI4 interface address width

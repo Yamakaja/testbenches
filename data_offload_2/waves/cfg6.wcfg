@@ -26,15 +26,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="14530001fs"></ZoomEndTime>
-      <Cursor1Time time="858fs"></Cursor1Time>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="2,000.000 ns"></ZoomEndTime>
+      <Cursor1Time time="918.001 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="203"></NameColumnWidth>
-      <ValueColumnWidth column_width="86"></ValueColumnWidth>
+      <ValueColumnWidth column_width="82"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="85" />
+   <WVObjectSize size="42" />
    <wvobject type="logic" fp_name="/system_tb/test_harness/DUT/init_ack">
       <obj_property name="ElementShortName">init_ack</obj_property>
       <obj_property name="ObjectShortName">init_ack</obj_property>
@@ -71,90 +71,6 @@
       <obj_property name="ElementShortName">m_axis_tvalid[0:0]</obj_property>
       <obj_property name="ObjectShortName">m_axis_tvalid[0:0]</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/system_tb/test_harness/DUT/s_axi_aclk">
-      <obj_property name="ElementShortName">s_axi_aclk</obj_property>
-      <obj_property name="ObjectShortName">s_axi_aclk</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/system_tb/test_harness/DUT/s_axi_araddr">
-      <obj_property name="ElementShortName">s_axi_araddr[31:0]</obj_property>
-      <obj_property name="ObjectShortName">s_axi_araddr[31:0]</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/system_tb/test_harness/DUT/s_axi_aresetn">
-      <obj_property name="ElementShortName">s_axi_aresetn</obj_property>
-      <obj_property name="ObjectShortName">s_axi_aresetn</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/system_tb/test_harness/DUT/s_axi_arprot">
-      <obj_property name="ElementShortName">s_axi_arprot[2:0]</obj_property>
-      <obj_property name="ObjectShortName">s_axi_arprot[2:0]</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/system_tb/test_harness/DUT/s_axi_arready">
-      <obj_property name="ElementShortName">s_axi_arready</obj_property>
-      <obj_property name="ObjectShortName">s_axi_arready</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/system_tb/test_harness/DUT/s_axi_arvalid">
-      <obj_property name="ElementShortName">s_axi_arvalid</obj_property>
-      <obj_property name="ObjectShortName">s_axi_arvalid</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/system_tb/test_harness/DUT/s_axi_awaddr">
-      <obj_property name="ElementShortName">s_axi_awaddr[31:0]</obj_property>
-      <obj_property name="ObjectShortName">s_axi_awaddr[31:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/system_tb/test_harness/DUT/s_axi_awprot">
-      <obj_property name="ElementShortName">s_axi_awprot[2:0]</obj_property>
-      <obj_property name="ObjectShortName">s_axi_awprot[2:0]</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/system_tb/test_harness/DUT/s_axi_awready">
-      <obj_property name="ElementShortName">s_axi_awready</obj_property>
-      <obj_property name="ObjectShortName">s_axi_awready</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/system_tb/test_harness/DUT/s_axi_awvalid">
-      <obj_property name="ElementShortName">s_axi_awvalid</obj_property>
-      <obj_property name="ObjectShortName">s_axi_awvalid</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/system_tb/test_harness/DUT/s_axi_bready">
-      <obj_property name="ElementShortName">s_axi_bready</obj_property>
-      <obj_property name="ObjectShortName">s_axi_bready</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/system_tb/test_harness/DUT/s_axi_bresp">
-      <obj_property name="ElementShortName">s_axi_bresp[1:0]</obj_property>
-      <obj_property name="ObjectShortName">s_axi_bresp[1:0]</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/system_tb/test_harness/DUT/s_axi_bvalid">
-      <obj_property name="ElementShortName">s_axi_bvalid</obj_property>
-      <obj_property name="ObjectShortName">s_axi_bvalid</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/system_tb/test_harness/DUT/s_axi_rdata">
-      <obj_property name="ElementShortName">s_axi_rdata[31:0]</obj_property>
-      <obj_property name="ObjectShortName">s_axi_rdata[31:0]</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/system_tb/test_harness/DUT/s_axi_rready">
-      <obj_property name="ElementShortName">s_axi_rready</obj_property>
-      <obj_property name="ObjectShortName">s_axi_rready</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/system_tb/test_harness/DUT/s_axi_rresp">
-      <obj_property name="ElementShortName">s_axi_rresp[1:0]</obj_property>
-      <obj_property name="ObjectShortName">s_axi_rresp[1:0]</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/system_tb/test_harness/DUT/s_axi_rvalid">
-      <obj_property name="ElementShortName">s_axi_rvalid</obj_property>
-      <obj_property name="ObjectShortName">s_axi_rvalid</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/system_tb/test_harness/DUT/s_axi_wdata">
-      <obj_property name="ElementShortName">s_axi_wdata[31:0]</obj_property>
-      <obj_property name="ObjectShortName">s_axi_wdata[31:0]</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/system_tb/test_harness/DUT/s_axi_wready">
-      <obj_property name="ElementShortName">s_axi_wready</obj_property>
-      <obj_property name="ObjectShortName">s_axi_wready</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/system_tb/test_harness/DUT/s_axi_wstrb">
-      <obj_property name="ElementShortName">s_axi_wstrb[3:0]</obj_property>
-      <obj_property name="ObjectShortName">s_axi_wstrb[3:0]</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/system_tb/test_harness/DUT/s_axi_wvalid">
-      <obj_property name="ElementShortName">s_axi_wvalid</obj_property>
-      <obj_property name="ObjectShortName">s_axi_wvalid</obj_property>
-   </wvobject>
    <wvobject type="logic" fp_name="/system_tb/test_harness/DUT/s_axis_aclk">
       <obj_property name="ElementShortName">s_axis_aclk</obj_property>
       <obj_property name="ObjectShortName">s_axis_aclk</obj_property>
@@ -164,8 +80,8 @@
       <obj_property name="ObjectShortName">s_axis_aresetn</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/system_tb/test_harness/DUT/s_axis_tdata">
-      <obj_property name="ElementShortName">s_axis_tdata[127:0]</obj_property>
-      <obj_property name="ObjectShortName">s_axis_tdata[127:0]</obj_property>
+      <obj_property name="ElementShortName">s_axis_tdata[511:0]</obj_property>
+      <obj_property name="ObjectShortName">s_axis_tdata[511:0]</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/system_tb/test_harness/DUT/s_axis_tlast">
       <obj_property name="ElementShortName">s_axis_tlast[0:0]</obj_property>
@@ -191,21 +107,17 @@
       <obj_property name="ElementShortName">Net1</obj_property>
       <obj_property name="ObjectShortName">Net1</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/system_tb/test_harness/DUT/VCC_1_dout">
-      <obj_property name="ElementShortName">VCC_1_dout[0:0]</obj_property>
-      <obj_property name="ObjectShortName">VCC_1_dout[0:0]</obj_property>
-   </wvobject>
    <wvobject type="array" fp_name="/system_tb/test_harness/DUT/i_data_offload_fifo_dst_raddr">
-      <obj_property name="ElementShortName">i_data_offload_fifo_dst_raddr[3:0]</obj_property>
-      <obj_property name="ObjectShortName">i_data_offload_fifo_dst_raddr[3:0]</obj_property>
+      <obj_property name="ElementShortName">i_data_offload_fifo_dst_raddr[4:0]</obj_property>
+      <obj_property name="ObjectShortName">i_data_offload_fifo_dst_raddr[4:0]</obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/system_tb/test_harness/DUT/i_data_offload_fifo_dst_ren">
       <obj_property name="ElementShortName">i_data_offload_fifo_dst_ren</obj_property>
       <obj_property name="ObjectShortName">i_data_offload_fifo_dst_ren</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/system_tb/test_harness/DUT/i_data_offload_fifo_src_waddr">
-      <obj_property name="ElementShortName">i_data_offload_fifo_src_waddr[3:0]</obj_property>
-      <obj_property name="ObjectShortName">i_data_offload_fifo_src_waddr[3:0]</obj_property>
+      <obj_property name="ElementShortName">i_data_offload_fifo_src_waddr[4:0]</obj_property>
+      <obj_property name="ObjectShortName">i_data_offload_fifo_src_waddr[4:0]</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/system_tb/test_harness/DUT/i_data_offload_fifo_src_wdata">
       <obj_property name="ElementShortName">i_data_offload_fifo_src_wdata[511:0]</obj_property>
@@ -247,93 +159,9 @@
       <obj_property name="ElementShortName">m_axis_aresetn_1</obj_property>
       <obj_property name="ObjectShortName">m_axis_aresetn_1</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/system_tb/test_harness/DUT/s_axi_1_ARADDR">
-      <obj_property name="ElementShortName">s_axi_1_ARADDR[31:0]</obj_property>
-      <obj_property name="ObjectShortName">s_axi_1_ARADDR[31:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/system_tb/test_harness/DUT/s_axi_1_ARPROT">
-      <obj_property name="ElementShortName">s_axi_1_ARPROT[2:0]</obj_property>
-      <obj_property name="ObjectShortName">s_axi_1_ARPROT[2:0]</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/system_tb/test_harness/DUT/s_axi_1_ARREADY">
-      <obj_property name="ElementShortName">s_axi_1_ARREADY</obj_property>
-      <obj_property name="ObjectShortName">s_axi_1_ARREADY</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/system_tb/test_harness/DUT/s_axi_1_ARVALID">
-      <obj_property name="ElementShortName">s_axi_1_ARVALID</obj_property>
-      <obj_property name="ObjectShortName">s_axi_1_ARVALID</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/system_tb/test_harness/DUT/s_axi_1_AWADDR">
-      <obj_property name="ElementShortName">s_axi_1_AWADDR[31:0]</obj_property>
-      <obj_property name="ObjectShortName">s_axi_1_AWADDR[31:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/system_tb/test_harness/DUT/s_axi_1_AWPROT">
-      <obj_property name="ElementShortName">s_axi_1_AWPROT[2:0]</obj_property>
-      <obj_property name="ObjectShortName">s_axi_1_AWPROT[2:0]</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/system_tb/test_harness/DUT/s_axi_1_AWREADY">
-      <obj_property name="ElementShortName">s_axi_1_AWREADY</obj_property>
-      <obj_property name="ObjectShortName">s_axi_1_AWREADY</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/system_tb/test_harness/DUT/s_axi_1_AWVALID">
-      <obj_property name="ElementShortName">s_axi_1_AWVALID</obj_property>
-      <obj_property name="ObjectShortName">s_axi_1_AWVALID</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/system_tb/test_harness/DUT/s_axi_1_BREADY">
-      <obj_property name="ElementShortName">s_axi_1_BREADY</obj_property>
-      <obj_property name="ObjectShortName">s_axi_1_BREADY</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/system_tb/test_harness/DUT/s_axi_1_BRESP">
-      <obj_property name="ElementShortName">s_axi_1_BRESP[1:0]</obj_property>
-      <obj_property name="ObjectShortName">s_axi_1_BRESP[1:0]</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/system_tb/test_harness/DUT/s_axi_1_BVALID">
-      <obj_property name="ElementShortName">s_axi_1_BVALID</obj_property>
-      <obj_property name="ObjectShortName">s_axi_1_BVALID</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/system_tb/test_harness/DUT/s_axi_1_RDATA">
-      <obj_property name="ElementShortName">s_axi_1_RDATA[31:0]</obj_property>
-      <obj_property name="ObjectShortName">s_axi_1_RDATA[31:0]</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/system_tb/test_harness/DUT/s_axi_1_RREADY">
-      <obj_property name="ElementShortName">s_axi_1_RREADY</obj_property>
-      <obj_property name="ObjectShortName">s_axi_1_RREADY</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/system_tb/test_harness/DUT/s_axi_1_RRESP">
-      <obj_property name="ElementShortName">s_axi_1_RRESP[1:0]</obj_property>
-      <obj_property name="ObjectShortName">s_axi_1_RRESP[1:0]</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/system_tb/test_harness/DUT/s_axi_1_RVALID">
-      <obj_property name="ElementShortName">s_axi_1_RVALID</obj_property>
-      <obj_property name="ObjectShortName">s_axi_1_RVALID</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/system_tb/test_harness/DUT/s_axi_1_WDATA">
-      <obj_property name="ElementShortName">s_axi_1_WDATA[31:0]</obj_property>
-      <obj_property name="ObjectShortName">s_axi_1_WDATA[31:0]</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/system_tb/test_harness/DUT/s_axi_1_WREADY">
-      <obj_property name="ElementShortName">s_axi_1_WREADY</obj_property>
-      <obj_property name="ObjectShortName">s_axi_1_WREADY</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/system_tb/test_harness/DUT/s_axi_1_WSTRB">
-      <obj_property name="ElementShortName">s_axi_1_WSTRB[3:0]</obj_property>
-      <obj_property name="ObjectShortName">s_axi_1_WSTRB[3:0]</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/system_tb/test_harness/DUT/s_axi_1_WVALID">
-      <obj_property name="ElementShortName">s_axi_1_WVALID</obj_property>
-      <obj_property name="ObjectShortName">s_axi_1_WVALID</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/system_tb/test_harness/DUT/s_axi_aclk_1">
-      <obj_property name="ElementShortName">s_axi_aclk_1</obj_property>
-      <obj_property name="ObjectShortName">s_axi_aclk_1</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/system_tb/test_harness/DUT/s_axi_aresetn_1">
-      <obj_property name="ElementShortName">s_axi_aresetn_1</obj_property>
-      <obj_property name="ObjectShortName">s_axi_aresetn_1</obj_property>
-   </wvobject>
    <wvobject type="array" fp_name="/system_tb/test_harness/DUT/s_axis_1_TDATA">
-      <obj_property name="ElementShortName">s_axis_1_TDATA[127:0]</obj_property>
-      <obj_property name="ObjectShortName">s_axis_1_TDATA[127:0]</obj_property>
+      <obj_property name="ElementShortName">s_axis_1_TDATA[511:0]</obj_property>
+      <obj_property name="ObjectShortName">s_axis_1_TDATA[511:0]</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/system_tb/test_harness/DUT/s_axis_1_TLAST">
       <obj_property name="ElementShortName">s_axis_1_TLAST[0:0]</obj_property>
