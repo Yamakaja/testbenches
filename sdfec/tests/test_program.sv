@@ -37,10 +37,22 @@ module test_program ();
         env.start();
 
         // Do stuff
+        fec.enable_interrupts(6'h3f);
         fec.dump_core_params();
         fec.dump_code(0);
 
+        // Enable AXIS Interfaces
+        fec.set_interface_widths(0, 0, 0, 0);
+        fec.set_axis_enable(0, 1, 1, 0, 1, 1);
+        
+        // Process sapmles
+        env.run(0, 5040, 5940);
+        #10
+        fec.dump_core_params();
+
         #10000
+        fec.dump_core_params();
+        #1000
 
         env.stop();
         stop_clocks;
