@@ -14,8 +14,8 @@ module test_program ();
     ldpc_ber_tester ber;
 
     initial begin
-        env = new(`TH.`MNG_AXI.inst.IF);
-        fec = new(env.mng, `SDFEC_BA);
+        env = new (`TH.`MNG_AXI.inst.IF);
+        fec = new (env.mng, `SDFEC_BA);
         ber = new (env.mng, `LDPC_BER_BA);
 
         setLoggerVerbosity(9);
@@ -29,12 +29,13 @@ module test_program ();
         fec.enable_interrupts(6'h3f);
         fec.dump_core_params();
         fec.dump_code(0);
-        
-        ber.dump_core_params();
 
         // Enable AXIS Interfaces
         fec.set_interface_widths(0, 0, 0, 0);
         fec.set_axis_enable(0, 1, 1, 0, 1, 1);
+
+
+        setup_ldpc_ber_tester();
         
         // Process sapmles
         env.run();
@@ -44,11 +45,12 @@ module test_program ();
         fec.dump_core_params();
 
         #10000
-        fec.dump_core_params();
-        #10000
-        
+
         ber.set_en(0);
-        #10000
+        #1000
+
+        ber.dump_core_params();
+        fec.dump_core_params();
 
         env.stop();
         stop_clocks;
@@ -76,7 +78,7 @@ module test_program ();
             0    /* code_id */
         );
         
-        ber.set_awgn_config(16'h010, -8'h10);
+        ber.set_awgn_config(16'h020, -8'h10); // x*0.25-4
         ber.set_last_mask(~(128'h0));
 
         ber.dump_core_params();

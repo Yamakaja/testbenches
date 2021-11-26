@@ -19,7 +19,7 @@ ENV_DEPS += system_bd.tcl
 ENV_DEPS += ../scripts/adi_sim.tcl
 ENV_DEPS += ../scripts/run_sim.tcl
 
-# LIB_DEPS += util_fifo2axi_bridge
+LIB_DEPS += ldpc_ber_tester
 
 #util_fifo2axi_bridge test program
 TP := test_program

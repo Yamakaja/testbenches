@@ -126,7 +126,8 @@ package environment_pkg;
                 buffer[j] = data[i+j];
 
             transaction.set_data(buffer);
-            transaction.set_last(i + 16 >= data.size());
+            // transaction.set_last(i + 16 >= data.size());
+            transaction.set_last(0);
             transaction.set_delay(0);
             din_axis_agent.driver.send(transaction);
             `INFO(("Wrote up to byte %d", i + 16));
