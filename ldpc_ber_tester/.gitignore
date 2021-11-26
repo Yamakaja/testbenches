@@ -1,0 +1,5 @@
+*.log
+hs_err_pid*.log
+results
+runs
+vivado_*.str
