@@ -44,10 +44,17 @@ module test_program ();
         #10
         fec.dump_core_params();
 
+        #30000
+        ber.set_en(0);
         #10000
 
-        ber.set_en(0);
+        ber.reset();
         #1000
+
+        ber.set_en(1);
+        #10000
+        ber.set_en(0);
+        #10000
 
         ber.dump_core_params();
         fec.dump_core_params();
@@ -77,8 +84,9 @@ module test_program ();
             1,   /* hard_op */
             0    /* code_id */
         );
+        ber.set_din_beats(16'd372);
         
-        ber.set_awgn_config(16'h020, -8'h10); // x*0.25-4
+        ber.set_awgn_config(16'h0010, -8'h04);
         ber.set_last_mask(~(128'h0));
 
         ber.dump_core_params();
