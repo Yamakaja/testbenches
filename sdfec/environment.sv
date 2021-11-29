@@ -126,11 +126,9 @@ package environment_pkg;
                 buffer[j] = data[i+j];
 
             transaction.set_data(buffer);
-            // transaction.set_last(i + 16 >= data.size());
-            transaction.set_last(0);
+            transaction.set_last(i + 16 >= data.size());
             transaction.set_delay(0);
             din_axis_agent.driver.send(transaction);
-            `INFO(("Wrote up to byte %d", i + 16));
         end
     endtask
 
@@ -169,13 +167,17 @@ package environment_pkg;
         axi4stream_transaction transaction;
 
         get_ctrl_word(0, 8, 1, 1, 0, 1, code, ctrl_word);
-        transaction = ctrl_axis_agent.driver.create_transaction();
-        transaction.set_data(ctrl_word);
-        transaction.set_delay(0);
-        ctrl_axis_agent.driver.send(transaction);
 
-        generate_code_data(K, N, 16, code_data);
-        write_data(code_data);
+        for (int i = 0; i < 50; i++) begin
+            transaction = ctrl_axis_agent.driver.create_transaction();
+            transaction.set_data(ctrl_word);
+            transaction.set_delay(0);
+            ctrl_axis_agent.driver.send(transaction);
+
+            generate_code_data(K, N, 16, code_data);
+            write_data(code_data);
+            `INFO(("Finished loading block %d", i+1));
+        end
     endtask
 
     //============================================================================

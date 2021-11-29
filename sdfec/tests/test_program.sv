@@ -50,7 +50,7 @@ module test_program ();
         #10
         fec.dump_core_params();
 
-        #10000
+        #30000
         fec.dump_core_params();
         #1000
 
