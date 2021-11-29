@@ -27,7 +27,11 @@ set part "xczu28dr-ffvg1517-2-e"
 
 adi_sim_project_xilinx $project_name $part
 
-set TST $::env(TST)
+if {[info exists ::env(TST)]} {
+    set TST $::env(TST)
+} else {
+    set TST test_program
+}
 
 # Add test files to the project
 adi_sim_project_files [list \
