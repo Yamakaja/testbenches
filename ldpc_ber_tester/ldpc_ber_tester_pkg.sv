@@ -11,6 +11,7 @@
 `define LDPC_BER_ADDR_AWGN_CONFIG           32'h000044
 `define LDPC_BER_BIT_AWGN_CONFIG_FACTOR     32'h00ffff
 `define LDPC_BER_BIT_AWGN_CONFIG_OFFSET     32'hff0000
+`define LDPC_BER_ADDR_DIN_BEATS             32'h000048
 `define LDPC_BER_ADDR_SDFEC_CONTROL_WORD    32'h00004c
 
 `define LDPC_BER_ADDR_LAST_MASK_LSB         32'h000050
@@ -18,7 +19,10 @@
 `define LDPC_BER_ADDR_FINISHED_BLOCKS_LSB   32'h000080
 `define LDPC_BER_ADDR_FINISHED_BLOCKS_MSB   32'h000084
 
-`define LDPC_BER_ADDR_BIT_ERRORS            32'h000088
+`define LDPC_BER_ADDR_BIT_ERRORS_LSB        32'h000088
+`define LDPC_BER_ADDR_BIT_ERRORS_MSB        32'h00008c
+
+`define LDPC_BER_ADDR_IN_FLIGHT             32'h000090
 
 package ldpc_ber_tester_pkg;
 
@@ -98,6 +102,16 @@ package ldpc_ber_tester_pkg;
             this.write(`LDPC_BER_ADDR_AWGN_CONFIG, {8'h0, offset, factor});
         endtask
 
+        task get_din_beats(output bit [15:0] bits);
+            bit [31:0] data;
+            this.read(`LDPC_BER_ADDR_DIN_BEATS, data);
+            bits = data[15:0];
+        endtask
+
+        task set_din_beats(bit [15:0] bits);
+            this.write(`LDPC_BER_ADDR_DIN_BEATS, {16'h0, bits});
+        endtask
+
         task get_sdfec_control_word(output bit [31:0] bits);
             this.read(`LDPC_BER_ADDR_SDFEC_CONTROL_WORD, bits);
         endtask
@@ -137,14 +151,15 @@ package ldpc_ber_tester_pkg;
             this.read(`LDPC_BER_ADDR_FINISHED_BLOCKS_MSB, bits[63:32]);
         endtask
 
-        task get_bit_errors(output bit [31:0] bits);
-            this.read(`LDPC_BER_ADDR_BIT_ERRORS, bits);
+        task get_bit_errors(output bit [63:0] bits);
+            this.read(`LDPC_BER_ADDR_BIT_ERRORS_LSB, bits[31:0]);
+            this.read(`LDPC_BER_ADDR_BIT_ERRORS_MSB, bits[63:32]);
         endtask
 
         task dump_core_params();
             reg [31:0] data;
             reg [127:0] mask;
-            reg [63:0] finished_blocks;
+            reg [63:0] large_data;
 
             `INFO(("ldpc_ber_tester Core Parameters:"));
 
@@ -166,6 +181,9 @@ package ldpc_ber_tester_pkg;
             this.read(`LDPC_BER_ADDR_AWGN_CONFIG, data);
             `INFO(("    LDPC_BER_ADDR_AWGN_CONFIG           = 0x%08x", data));
     
+            this.read(`LDPC_BER_ADDR_DIN_BEATS, data);
+            `INFO(("    LDPC_BER_ADDR_DIN_BEATS             = 0x%08x", data));
+
             this.read(`LDPC_BER_ADDR_SDFEC_CONTROL_WORD, data);
             `INFO(("    LDPC_BER_ADDR_SDFEC_CONTROL_WORD    = 0x%08x", data));
     
@@ -173,12 +191,16 @@ package ldpc_ber_tester_pkg;
                 this.read(`LDPC_BER_ADDR_LAST_MASK_LSB + i*4, mask[i * 32 +: 32]);
             `INFO(("    LDPC_BER_ADDR_LAST_MASK             = 0x%032x", mask));
     
-            this.read(`LDPC_BER_ADDR_FINISHED_BLOCKS_LSB, finished_blocks[31:0]);
-            this.read(`LDPC_BER_ADDR_FINISHED_BLOCKS_MSB, finished_blocks[63:32]);
-            `INFO(("    LDPC_BER_ADDR_FINISHED_BLOCKS       = 0x%016x", finished_blocks));
+            this.read(`LDPC_BER_ADDR_FINISHED_BLOCKS_LSB, large_data[31:0]);
+            this.read(`LDPC_BER_ADDR_FINISHED_BLOCKS_MSB, large_data[63:32]);
+            `INFO(("    LDPC_BER_ADDR_FINISHED_BLOCKS       = 0x%016x", large_data));
     
-            this.read(`LDPC_BER_ADDR_BIT_ERRORS, data);
-            `INFO(("    LDPC_BER_ADDR_BIT_ERRORS            = 0x%08x", data));
+            this.read(`LDPC_BER_ADDR_BIT_ERRORS_LSB, large_data);
+            this.read(`LDPC_BER_ADDR_BIT_ERRORS_MSB, large_data);
+            `INFO(("    LDPC_BER_ADDR_BIT_ERRORS            = 0x%016x", large_data));
+
+            this.read(`LDPC_BER_ADDR_IN_FLIGHT, data);
+            `INFO(("    LDPC_BER_ADDR_IN_FLIGHT             = 0x%08x", data));
 
         endtask
 
