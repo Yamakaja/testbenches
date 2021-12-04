@@ -44,17 +44,17 @@ module test_program ();
         #10
         fec.dump_core_params();
 
-        #30000
+        #5000
         ber.set_en(0);
-        #10000
+        #3000
 
         ber.reset();
         #1000
 
         ber.set_en(1);
-        #10000
+        #5000
         ber.set_en(0);
-        #10000
+        #3000
 
         ber.dump_core_params();
         fec.dump_core_params();
